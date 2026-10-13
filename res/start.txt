@@ -1,0 +1,13 @@
+===================================================
+Hoşgeldin!
+Bir renk seçerek oyuna başlayabilirsin
+Kırmızı renkli yemekler +10 puan iken açık mavi olanlar -5 puan
+
+Renkler:
+1. Yeşil
+2. Beyaz
+3. Mor
+4. Sarı
+
+Lütfen gerekli tuşa basarak seçiminizi yapınız(1-4)
+===================================================

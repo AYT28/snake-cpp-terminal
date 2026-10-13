@@ -18,7 +18,7 @@ int main() {
 
     std::string startArt = readTextFile("res/start.txt");
     
-    // Programın tamamını kapsayan yeniden başlatma döngüsü
+    // A restarting loop that wraps all of the program's loops
     bool playProgram = true;
     while (playProgram) {
         bool inMenu = true;
@@ -28,7 +28,7 @@ int main() {
         int prevTermH = termH;
         int prevTermW = termW;
 
-        // 1. GİRİŞ VE RENK SEÇİM MENÜSÜ
+        // 1. Start Screen and Color Choosing
         while (inMenu) {
             terminal.getSize(termW, termH);
             if (termH != prevTermH || termW != prevTermW) {
@@ -74,7 +74,7 @@ int main() {
             break;
         }
 
-        // 2. OYUN DEĞİŞKENLERİ
+        // 2. Game Variables
         bool isGameRunning = true;
         Direction direction = Direction::UP;
         int width = 40;
@@ -87,7 +87,7 @@ int main() {
         terminal.getSize(termW, termH);
         prevTermH = termH;
 
-        // 3. ANA OYUN DÖNGÜSÜ
+        // 3. Main Game Loop
         while (isGameRunning) {
             bool isEaten = false;
 
@@ -132,7 +132,7 @@ int main() {
             Sleep(100); // 10 FPS
         }
 
-        // Eğer oyun bittiyse ancak kullanıcı 'Q' ile çıkmadıysa Game Over ekranı göster
+        // If game is over but user did not quit pressing Q, show game over screen
         if (!playProgram) break;
 
         std::cout << Ansi::CLEAR;
@@ -159,7 +159,7 @@ int main() {
                 }
                 else if (k == 'q' || k == 'Q') {
                     waitingForRestart = false;
-                    playProgram = false; // Ana döngüyü kır ve programı bitir
+                    playProgram = false; // Break the main program loop
                 }
             }
             Sleep(50);

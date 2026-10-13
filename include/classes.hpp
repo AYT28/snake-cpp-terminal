@@ -61,13 +61,16 @@ class Snake {
     private:
     std::deque<Point> body;
     const char* color;
+    Direction direction;
 
     public:
-    Snake(std::initializer_list<Point> points, const char* color);
+    Snake(std::initializer_list<Point> points, const char* color, Direction direction);
 
     const std::deque<Point>& get_body() const;
     const char* get_color() const;
-    void new_head(Direction direction);
+    Direction get_direction() const;
+    void set_direction(Direction direction);
+    void new_head();
     void pop();
     Point get_head() const;
 };

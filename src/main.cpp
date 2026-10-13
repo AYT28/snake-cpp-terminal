@@ -81,7 +81,7 @@ int main() {
         int height = 20;
         int score = 0;
         
-        Snake snake({Point(8, 10), Point(9, 10), Point(10, 10)}, snakeColor);
+        Snake snake({Point(8, 10), Point(9, 10), Point(10, 10)}, snakeColor, Direction::UP);
         std::vector<Food> foods = {};
 
         terminal.getSize(termW, termH);
@@ -91,10 +91,10 @@ int main() {
         while (isGameRunning) {
             bool isEaten = false;
 
-            moveDirection(terminal, direction, isGameRunning);
+            moveDirection(terminal, snake, isGameRunning);
             scoreControl(score, isGameRunning);
 
-            snake.new_head(direction);
+            snake.new_head();
 
             checkFoodEaten(foods, snake, score, isEaten);
             selfCollision(isGameRunning, snake);
@@ -139,7 +139,6 @@ int main() {
         bool waitingForRestart = true;
         
         while (waitingForRestart) {
-            // Basit bir Game Over yazısı veya ekranı ortalayarak basabilirsiniz
             std::string gameOverText = readTextFile("res/gameover.txt");
             terminal.resetCursor();
 

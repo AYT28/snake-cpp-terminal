@@ -3,4 +3,4 @@
 #include "classes.hpp"
 #include "terminal.hpp"
 
-void moveDirection(Terminal& terminal, Direction& direction, bool& isGameRunning);
+void moveDirection(Terminal& terminal, Snake& snake, bool& isGameRunning);

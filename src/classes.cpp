@@ -54,7 +54,7 @@ int Food::get_lifetime() const {
     return this->lifetime;
 }
 
-Snake::Snake(std::initializer_list<Point> points, const char* color) : body(points), color(color)
+Snake::Snake(std::initializer_list<Point> points, const char* color, Direction direction) : body(points), color(color), direction(direction)
 {}
 
 const std::deque<Point>& Snake::get_body() const {
@@ -65,22 +65,30 @@ const char* Snake::get_color() const {
     return this->color;
 }
 
-void Snake::new_head(Direction direction) {
+Direction Snake::get_direction() const {
+    return this->direction;
+}
+
+void Snake::set_direction(Direction direction) {
+    this->direction = direction;
+}
+
+void Snake::new_head() {
     Point oldHead = this->body.front();
 
     int x = oldHead.get_x();
     int y = oldHead.get_y();
 
-    if (direction == Direction::UP) {
+    if (this->get_direction() == Direction::UP) {
         y--;
     }
-    else if (direction == Direction::DOWN) {
+    else if (this->get_direction() == Direction::DOWN) {
         y++;
     }
-    else if (direction == Direction::LEFT) {
+    else if (this->get_direction() == Direction::LEFT) {
         x--;
     }
-    else if (direction == Direction::RIGHT) {
+    else if (this->get_direction() == Direction::RIGHT) {
         x++;
     }
 

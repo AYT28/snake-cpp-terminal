@@ -9,13 +9,13 @@ static const char* colorOf(char ch, const Snake& snake, const std::vector<Food>&
     if (ch == '=' || ch == '@') return Ansi::BLUE;
     if (ch == 'O') return snake.get_color();
     if (ch == 'x') {
-        // O an çizilen 'x' koordinatındaki yemeği bul ve rengini döndür
+        // Find the food at the 'x' coordinate being drawn at that moment and return its color.
         for (const Food& f : foods) {
             if (f.get_x() == x && f.get_y() == y) {
-                return f.get_color(); // Yemek sınıfına eklediğin get_color() fonksiyonu
+                return f.get_color();
             }
         }
-        return Ansi::RED; // Eğer bulunamazsa varsayılan renk
+        return Ansi::RED; // If it can't find, it uses default color which is red
     }
     return Ansi::EMPTY;
 }
@@ -23,7 +23,6 @@ static const char* colorOf(char ch, const Snake& snake, const std::vector<Food>&
 void draw(Terminal& terminal, const Snake& snake, const std::vector<Food>& foods, int width, int height, int score) {
     std::vector<std::string> frame(height, std::string(width, ' '));
 
-    // Çerçeve ve öğeleri yerleştirme kısımları aynı kalabilir...
     for (int x = 0; x < width; x++) {
         frame[0][x] = '=';
         frame[height - 1][x] = '=';
@@ -47,18 +46,18 @@ void draw(Terminal& terminal, const Snake& snake, const std::vector<Food>& foods
     std::string out;
     out.append(marginY, '\n');
 
-    // Harf harf (x, y koordinatlarıyla) yazdırma döngüsü
+    // Drawing loop
     for (int y = 0; y < height; y++) {
         out.append(marginX, ' ');
         for (int x = 0; x < width; x++) {
             char ch = frame[y][x];
-            out += colorOf(ch, snake, foods, x, y); // x ve y koordinatını gönderiyoruz
+            out += colorOf(ch, snake, foods, x, y);
             out += ch;
         }
         out = out + Ansi::EMPTY + "\n";
     }
 
-    // Skor yazdırma kısmı aynı kalabilir...
+    // Writing score
     std::string scoreText = "Score: " + std::to_string(score);
     out += '\n';
     out.append(marginX + (width - (int)scoreText.size()) / 2, ' ');

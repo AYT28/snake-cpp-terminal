@@ -18,11 +18,9 @@ add_executable(snake
 
 target_include_directories(snake PRIVATE include)
 
-# res klasörünü build klasörüne kopyala
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/res"
      DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
 
-# GCC / Clang için Release optimizasyonları
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(snake PRIVATE
         $<$<CONFIG:Release>:-Os>

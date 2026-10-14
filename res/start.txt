@@ -4,6 +4,7 @@ Welcome! You can start by choosing a color for your snake:
 2. White
 3. Purple
 4. Yellow
+Press 1-4 to choose color
 
 Mechanics:
 There are safe foods(which are red) and unsafe foods(which are blue). 

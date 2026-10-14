@@ -1,4 +1,4 @@
-=================
-R = Yeniden Başla
-Q = Oyundan Çık
-=================
+===============
+R = Start Again
+Q = Exit Game
+===============

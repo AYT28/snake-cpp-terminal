@@ -1,13 +1,19 @@
-===================================================
-Hoşgeldin!
-Bir renk seçerek oyuna başlayabilirsin
-Kırmızı renkli yemekler +10 puan iken açık mavi olanlar -5 puan
+======================================================================
+Welcome! You can start by choosing a color for your snake:
+1. Green
+2. White
+3. Purple
+4. Yellow
 
-Renkler:
-1. Yeşil
-2. Beyaz
-3. Mor
-4. Sarı
+Mechanics:
+There are safe foods(which are red) and unsafe foods(which are blue). 
+If you eat safe foods, you gain 10 score.
+But if you eat unsafe food, you lose 5 score.
+Also unsafe food disappears after 5 seconds when they spawn. 
+Lose conditions are:
+1. Hitting walls
+2. Your head hitting yourself
+3. Falling under 0 score
 
-Lütfen gerekli tuşa basarak seçiminizi yapınız(1-4)
-===================================================
+Have Fun :)
+======================================================================

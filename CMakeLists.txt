@@ -31,8 +31,9 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 
     target_link_options(snake PRIVATE
         $<$<CONFIG:Release>:-s>
-        $<$<CONFIG:Release>:-Wl,--gc-sections>
+        $<$<CONFIG:Release>:-static>
         $<$<CONFIG:Release>:-static-libgcc>
         $<$<CONFIG:Release>:-static-libstdc++>
+        $<$<CONFIG:Release>:-Wl,--gc-sections>
     )
 endif()

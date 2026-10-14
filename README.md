@@ -11,9 +11,9 @@ This project was created as a learning project to practice C++.
 - Terminal rendering using terminal APIs and ANSI escape sequences
 
 # Requirements
-C++17 compiler
-CMake 3.20 or higher
-Windows x64
+- C++17 compiler
+- CMake 3.20 or higher
+- Windows x64
 
 # Installation
 Download snake-cpp-terminal-windows-x64.zip from the Releases section. Extract the zip file and run snake.exe.
